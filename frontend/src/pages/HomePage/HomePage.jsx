@@ -1,13 +1,15 @@
 import React from 'react';
 
-import MainPropositions from "../../components/MainPropositions/MainPropositions";
+import MainPropositions from '../../components/MainPropositions/MainPropositions';
+import ShopTheLatest from '../../components/ShopTheLatest/ShopTheLatest';
 import styles from './HomePage.css';
 
 const HomePage = () => {
-  return ( <div className={styles.homePage}>
+  return (
+    <div className={styles.homePage}>
       <MainPropositions />
-      HomePage
-  </div>
-);
+      <ShopTheLatest />
+    </div>
+  );
 };
 export default HomePage;

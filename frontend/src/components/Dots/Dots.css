@@ -2,18 +2,21 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  align-items: center;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 1px solid white;
   background-color: white;
   margin: 0 5px;
   cursor: pointer;
 }
 
 .dot.active {
+  width: 16px;
+  height: 16px;
   background-color: transparent;
 }
