@@ -1,12 +1,12 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route,Routes } from 'react-router-dom';
 
+import CartPage from './src/pages/CartPage';
 // Імпортуємо компоненти сторінок
 import HomePage from './src/pages/HomePage/HomePage';
-import ShopPage from './src/pages/ShopPage';
-import CartPage from './src/pages/CartPage';
+import NotFoundPage from './src/pages/NotFoundPage/NotFoundPage';
 import ProfilePage from './src/pages/ProfilePage';
-import NotFoundPage from './src/pages/NotFoundPage';
+import ShopPage from './src/pages/ShopPage';
 
 // Створюємо компонент маршрутизації
 const AppRoutes = () => {
