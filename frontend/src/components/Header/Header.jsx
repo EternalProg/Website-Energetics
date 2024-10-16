@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import styles from './Header.css';
 import profileImage from './images/authorization.png';
@@ -18,8 +18,8 @@ const Find = () => {
 const Cart = () => {
   return (
     <div>
-      <Link to={"cart"}>
-        <img src={cartImage} alt={'shop cart'} className={styles.icons}/>
+      <Link to={'cart'}>
+        <img src={cartImage} alt={'shop cart'} className={styles.icons} />
       </Link>
       {/*
       <a href="/Cart">
@@ -40,26 +40,31 @@ const Authorization = () => {
 
 const Header = () => {
   return (
-    <div className={styles.header}>
-      <a href="/" className={styles.energetics}>
-        Energetics
-      </a>
-      <ul className={styles.inlineList}>
-        <li>
-          <Link to={"shop"} className={styles.shop}>Shop</Link>
-        </li>
-        <li>|</li>
-        <li>
-          <Cart />
-        </li>
-        <li>
-          <Find />
-        </li>
-        <li>
-          <Authorization />
-        </li>
-      </ul>
-    </div>
+    <>
+      <div className={styles.header}>
+        <a href="/" className={styles.energetics}>
+          Energetics
+        </a>
+        <ul className={styles.inlineList}>
+          <li>
+            <Link to={'shop'} className={styles.shop}>
+              Shop
+            </Link>
+          </li>
+          <li>|</li>
+          <li>
+            <Cart />
+          </li>
+          <li>
+            <Find />
+          </li>
+          <li id={styles.authorizationIcon}>
+            <Authorization />
+          </li>
+        </ul>
+      </div>
+      <hr className={styles.headerHorizontalLine}/>
+    </>
   );
 };
 export default Header;

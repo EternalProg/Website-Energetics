@@ -5,29 +5,29 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding: 10px;
 
   .icons {
     width: 24px;
   }
 
   .inlineList {
-    list-style-type: none; /* Видаляє маркери списку */
-    padding: 20px; /* Видаляє відступи */
-    display: flex; /* Встановлює флекс-контейнер */
-    align-items: center; /* Вирівнює елементи по центру */
+    list-style-type: none;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
     font-size: 16px;
     color: #707070;
   }
 
   .inlineList li {
     margin-right: 45px;
-    /* Додає відступ між елементами */
   }
 
   .energetics {
     text-decoration: none;
-    font-family: Allerta Stencil, serif;
+    font-family:
+      Allerta Stencil,
+      serif;
     color: #0d093a;
     font-size: 35px;
   }
@@ -35,6 +35,15 @@
   .shop {
     text-decoration: none;
     color: #000000;
-    font-weight: calc(340 * 1.5);
+    font-weight: calc(300 * 1.5);
   }
+
+  #authorizationIcon {
+    margin: 0;
+  }
+}
+
+.headerHorizontalLine {
+  width: 100%;
+  margin-bottom: 30px;
 }

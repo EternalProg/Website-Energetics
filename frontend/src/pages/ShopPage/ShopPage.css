@@ -1,0 +1,16 @@
+.body {
+  min-height: 800px;
+  padding-top: 96px;
+}
+
+.hr {
+
+}
+
+span {
+  color: #000000;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 33px;
+}

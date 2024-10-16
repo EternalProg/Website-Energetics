@@ -6,7 +6,7 @@ import CartPage from './src/pages/CartPage';
 import HomePage from './src/pages/HomePage/HomePage';
 import NotFoundPage from './src/pages/NotFoundPage/NotFoundPage';
 import ProfilePage from './src/pages/ProfilePage';
-import ShopPage from './src/pages/ShopPage';
+import ShopPage from './src/pages/ShopPage/ShopPage';
 
 // Створюємо компонент маршрутизації
 const AppRoutes = () => {
