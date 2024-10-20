@@ -7,7 +7,6 @@
   width: 450px;
   height: 450px;
 }
-
 .productImage {
   background-color: #d9d9d9;
   border-radius: 8px;
@@ -15,7 +14,8 @@
   height: 450px;
 }
 
-.productName, .productPrice {
+.productName,
+.productPrice {
   text-align: left;
   margin-bottom: 12px;
 }
@@ -27,7 +27,7 @@
 }
 
 .productPrice {
-  color: #A18A68;
+  color: #a18a68;
   font-size: 20px;
 }
 
