@@ -1,4 +1,7 @@
 .idea
+TODO
+frontend/package-lock.json
+
 ### VisualStudioCode template
 .vscode/*
 !.vscode/settings.json

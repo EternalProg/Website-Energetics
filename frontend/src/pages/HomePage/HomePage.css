@@ -2,9 +2,6 @@
 
 .homePage {
   min-height: 100vh;
-  padding: 10px;
   font-family: 'DM Sans', sans-serif;
-
-
-
+  padding: 10px 10px 200px;
 }
