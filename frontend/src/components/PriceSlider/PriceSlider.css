@@ -1,0 +1,44 @@
+.filterPrice {
+  width: 100%;
+  margin: 40px 0;
+}
+
+.rangeValues {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sliderContainer {
+  position: relative;
+  height: 5px;
+}
+
+.rangeBar {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  margin: 0;
+  background: #a9aeb5;
+  pointer-events: none;
+}
+
+.rangeMin {
+  pointer-events: all;
+}
+
+.rangeMax {
+  pointer-events: all;
+}
+
+.rangeBar::-webkit-slider-thumb {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.progress {
+  position: absolute;
+  height: 2px;
+  background-color: #707070;
+}

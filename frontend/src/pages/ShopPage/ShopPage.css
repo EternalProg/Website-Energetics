@@ -1,0 +1,18 @@
+.shopPage {
+  min-height: 800px;
+  padding-top: 96px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 20px;
+}
+
+.shopPage h1 {
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 33px;
+  margin-bottom: 50px;
+}

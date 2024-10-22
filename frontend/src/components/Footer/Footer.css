@@ -1,0 +1,49 @@
+.footer {
+  text-align: center;
+  padding-bottom: 50px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+  }
+
+  .licenseAndIcons {
+    justify-content: space-between;
+    padding-top: 50px;
+  }
+
+  .info {
+    margin-right: 41px;
+  }
+
+  .contact {
+    color: #707070;
+    text-decoration: none;
+  }
+
+  .terms {
+    color: #707070;
+    text-decoration: none;
+  }
+
+  .licence {
+    font-size: 16px;
+    color: #707070;
+    text-decoration: none;
+  }
+
+  .energetics {
+    font-size: 16px;
+    color: black;
+  }
+
+  .facebookIcon {
+    width: 12px;
+    margin-right: 20px;
+  }
+
+  .instagramIcon {
+    width: 22px;
+  }
+}

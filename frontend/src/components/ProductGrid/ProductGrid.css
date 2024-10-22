@@ -1,0 +1,49 @@
+.productGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px;
+}
+
+.pagination .active {
+  background-color: #000;
+  color: #fff;
+}
+
+.shopCard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  margin-right: 50px;
+  width: 400px;
+  height: 400px;
+}
+
+.productImage {
+  width: 400px;
+  height: 400px;
+}
+
+.productName {
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.productPrice {
+  color: #a18a68;
+  font-size: 16px;
+}

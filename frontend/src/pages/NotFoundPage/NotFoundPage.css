@@ -1,0 +1,34 @@
+.notFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  color: #000000;
+}
+
+.errorText {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.text {
+  font-size: 22px;
+  white-space: pre-line;
+  color: #707070;
+  text-align: center;
+  font-weight: 400;
+}
+
+.homePageBtn {
+  width: 187px;
+  height: 53px;
+  margin-top: 50px;
+
+  font-weight: bolder;
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}

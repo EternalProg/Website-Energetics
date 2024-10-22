@@ -1,0 +1,140 @@
+.filterPanel {
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.filterPanel h3 {
+  margin-bottom: 15px;
+}
+
+.filterPanel,
+.filterPanel select {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.filterSearch {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9d9d9;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.filterSearch img {
+  width: 19px;
+  height: 19px;
+}
+
+.filterSearch input {
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  letter-spacing: 1px;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  color: #000000;
+}
+
+.filterToggle label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  flex-direction: row-reverse;
+}
+
+.filterPanel {
+  margin-bottom: 15px;
+}
+
+.sortDropdown,
+.categoryDropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
+  width: 261px;
+  height: 53px;
+}
+
+.sortDropdown:hover,
+.categoryDropdown:hover {
+  background-color: #fafafa;
+}
+
+.sortDropdown.open,
+.categoryDropdown.open {
+  background: #5a90e0;
+  color: #fff;
+  border-left-color: #6c6d70;
+}
+
+.filterToggle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filterToggle label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.filterToggle .switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.filterToggle .switch input {
+  display: none;
+}
+
+.filterToggle .slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.filterToggle .slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+.filterToggle input:checked + .slider {
+  background-color: #707070;
+}
+
+.filterToggle input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.filterToggle .slider.round {
+  border-radius: 34px;
+}
+
+.filterToggle .slider.round:before {
+  border-radius: 50%;
+}

@@ -1,0 +1,27 @@
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding-top: 64px;
+  padding-left: 0;
+  justify-content: space-between;
+}
+
+.shopTheLatest {
+  font-weight: 500;
+  font-size: 33px;
+}
+
+.viewAll {
+  font-size: 20px;
+  color: #a18a68;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 52px;
+  justify-content: space-between;
+}
