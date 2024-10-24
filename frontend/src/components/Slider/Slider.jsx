@@ -6,26 +6,26 @@ import styles from './Slider.css';
 
 const Slider = ({ products }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalRef = useRef(null);
+  const intervalReference = useRef(null);
 
   // Автоматична зміна слайдів кожні 10 секунд
   useEffect(() => {
     const startInterval = () => {
-      intervalRef.current = setInterval(() => {
+      intervalReference.current = setInterval(() => {
         setCurrentIndex((previousIndex) => (previousIndex + 1) % products.length);
       }, 10_000); // 10 секунд
     };
 
     startInterval();
 
-    return () => clearInterval(intervalRef.current); // Очищає інтервал при демонтажі компонента
+    return () => clearInterval(intervalReference.current); // Очищає інтервал при демонтажі компонента
   }, [products.length]);
 
   // Обробка кліку на крапочки
   const goToSlide = (index) => {
     setCurrentIndex(index);
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
+    clearInterval(intervalReference.current);
+    intervalReference.current = setInterval(() => {
       setCurrentIndex((previousIndex) => (previousIndex + 1) % products.length);
     }, 10_000); // 10 секунд
   };

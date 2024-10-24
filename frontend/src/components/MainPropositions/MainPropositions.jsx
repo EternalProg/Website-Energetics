@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Slider from '../Slider/Slider';
-import styles from './MainPropositions.css';
 import image1 from './images/image1.png'
+import styles from './MainPropositions.css';
 
 const MainPropositions = () => {
   const products = [

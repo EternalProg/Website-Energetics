@@ -1,6 +1,7 @@
+import PropTypes from "prop-types"; // Важливо, що стилі імпортовані
 import React from 'react';
 
-import styles from './Dots.css'; // Важливо, що стилі імпортовані
+import styles from './Dots.css';
 
 const Dots = ({ currentIndex, total, goToSlide }) => {
   return (
@@ -14,6 +15,12 @@ const Dots = ({ currentIndex, total, goToSlide }) => {
       ))}
     </div>
   );
+};
+
+Dots.propTypes = {
+  currentIndex: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  goToSlide: PropTypes.func.isRequired,
 };
 
 export default Dots;

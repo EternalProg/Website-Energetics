@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
+
 import styles from './PriceSlider.css';
 
 const PriceSlider = () => {
   const [minPrice, setMinPrice] = useState(350);
-  const [maxPrice, setMaxPrice] = useState(10000);
+  const [maxPrice, setMaxPrice] = useState(10_000);
 
   const handleMinPriceChange = (event) => {
-    const value = Math.min(Number(event.target.value), maxPrice - 1); // Мінімум не може бути більшим за макс
+    const value = Math.min(Number(event.target.value), maxPrice - 500); // Мінімум не може бути більшим за макс - 100
     setMinPrice(value);
   };
 
   const handleMaxPriceChange = (event) => {
-    const value = Math.max(Number(event.target.value), minPrice + 1); // Максимум не може бути меншим за мін
+    const value = Math.max(Number(event.target.value), minPrice + 500); // Максимум не може бути меншим за мін + 100
     setMaxPrice(value);
   };
+
 
   return (
     <div className={styles.filterPrice}>
@@ -21,7 +23,6 @@ const PriceSlider = () => {
         <span>Min: ${minPrice}</span>
         <span>Max: ${maxPrice}</span>
       </div>
-
       <div className={styles.sliderContainer}>
         {/* Подвійний слайдер */}
         <input

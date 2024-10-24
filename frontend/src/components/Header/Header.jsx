@@ -32,7 +32,7 @@ const Cart = () => {
 
 const Authorization = () => {
   return (
-    <a href="/authorization">
+    <a href="/auth">
       <img src={profileImage} alt={'authorization'} className={styles.icons} />
     </a>
   );
