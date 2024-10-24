@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
+// import { Link } from 'react-router-dom';
 import styles from './AuthorizarionPage.css';
 
 const AuthorizationPage = () => {
@@ -16,16 +16,10 @@ const AuthorizationPage = () => {
 
       {/* Кнопки для перемикання */}
       <div className={styles.authToggle}>
-        <button
-          className={isSignIn ? 'active' : ''}
-          onClick={toggleToSignIn}
-        >
+        <button className={isSignIn ? 'active' : ''} onClick={toggleToSignIn}>
           Sign in
         </button>
-        <button
-          className={isSignIn ? '' : 'active'}
-          onClick={toggleToRegister}
-        >
+        <button className={isSignIn ? '' : 'active'} onClick={toggleToRegister}>
           Register
         </button>
       </div>

@@ -11,7 +11,12 @@
     "test": "lint-staged",
     "test:open": "cypress open",
     "test:ct": "cypress run --component --browser chrome",
-    "prepare": "husky"
+    "prepare": "cd .. && husky frontend/.husky"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "keywords": [
     "React",

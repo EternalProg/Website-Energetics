@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import styles from './Slide.css';
@@ -11,9 +12,18 @@ const Slide = ({ product }) => {
         <p className={styles.description}>{product.description}</p>
         <button className={styles.viewProductBtn}>View Product</button>
       </div>
-      <img src={product.image} alt={product.name}/>
+      <img src={product.image} alt={product.name} />
     </div>
   );
+};
+
+Slide.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Slide;

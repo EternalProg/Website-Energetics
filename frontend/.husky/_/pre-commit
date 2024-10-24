@@ -1,1 +1,4 @@
-npm run test
+cd frontend
+npm test
+
+echo "Running tests"

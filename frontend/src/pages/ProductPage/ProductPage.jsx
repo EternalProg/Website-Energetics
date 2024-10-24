@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import React from 'react';
-import { useParams } from 'react-router-dom';
 
+//import { useParams } from 'react-router-dom';
 import styles from './ProductPage.css';
 
 // eslint-disable-next-line no-empty-pattern

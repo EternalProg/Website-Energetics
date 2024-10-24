@@ -1,4 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Dots from '../Dots/Dots';
 import Slide from '../Slide/Slide';
@@ -38,9 +39,19 @@ const Slider = ({ products }) => {
       <Slide product={products[currentIndex]} />
 
       {/* Крапочки для перемикання слайдів */}
-
     </div>
   );
+};
+
+Slider.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default Slider;
