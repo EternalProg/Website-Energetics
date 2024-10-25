@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  .icons {
+    width: 24px;
+  }
+
+  .inlineList {
+    list-style-type: none;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #707070;
+  }
+
+  .inlineList li {
+    margin-right: 45px;
+  }
+
+  .energetics {
+    text-decoration: none;
+    font-family:
+      Allerta Stencil,
+      serif;
+    color: #0d093a;
+    font-size: 35px;
+  }
+
+  .shop {
+    text-decoration: none;
+    color: #000000;
+    font-weight: calc(300 * 1.5);
+  }
+
+  #authorizationIcon {
+    margin: 0;
+  }
+}
+
+.headerHorizontalLine {
+  width: 100%;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,33 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 160px;
+  margin-right: 160px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  height: 450px;
+}
+.productImage {
+  background-color: #d9d9d9;
+  border-radius: 8px;
+  width: 450px;
+  height: 450px;
+}
+
+.productName,
+.productPrice {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.productName {
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.productPrice {
+  color: #a18a68;
+  font-size: 20px;
+}
+
