@@ -1,0 +1,63 @@
+.authorizationPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  color: #000000;
+}
+
+.authToggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.authToggle button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 50%;
+  border-radius: 5px 5px 0 0;
+}
+
+.authToggle button.active {
+  background-color: #ffffff;
+  border-bottom: 2px solid #000;
+}
+
+.authToggle input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signInForm {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.text {
+  font-size: 22px;
+  white-space: pre-line;
+  color: #707070;
+  text-align: center;
+  font-weight: 400;
+}
+
+.homePageBtn {
+  width: 187px;
+  height: 53px;
+  margin-top: 50px;
+
+  font-weight: bolder;
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}

@@ -22,12 +22,15 @@ const config = {
     ],
     /* https://github.com/import-js/eslint-plugin-import */
     settings: {
+        react: {
+            version: "detect"
+        },
         'import/resolver': {
             node: {
                 extensions: ['.js', '.jsx'],
             },
             webpack: {
-                config: './config/webpack.dev.config.js',
+                config: './config/webpack.development.config.js',
             },
         },
     },
@@ -55,12 +58,20 @@ const config = {
             rules: {
                 'unicorn/prefer-module': 'off',
                 'unicorn/filename-case': 'off',
-            },
+                'unicorn/prevent-abbreviations' : 'off',
+
+        },
         },
     ],
     globals: {
         Cypress: true,
     },
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+    }
+
 };
 
 module.exports = config;

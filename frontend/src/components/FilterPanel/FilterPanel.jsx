@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
+import PriceSlider from '../PriceSlider/PriceSlider';
 import styles from './FilterPanel.css';
 import find from './images/find.png';
-import PriceSlider from '../PriceSlider/PriceSlider';
 
 const FilterPanel = () => {
   return (
@@ -29,7 +29,7 @@ const FilterPanel = () => {
         </select>
       </div>
 
-      <PriceSlider/>
+      <PriceSlider />
 
       <div className={styles.filterToggle}>
         <label>
@@ -50,5 +50,6 @@ const FilterPanel = () => {
     </div>
   );
 };
+
 
 export default FilterPanel;

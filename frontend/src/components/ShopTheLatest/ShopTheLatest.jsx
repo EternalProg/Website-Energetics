@@ -2,8 +2,8 @@ import React from 'react'
 import {Link} from "react-router-dom";
 
 import Product from '../Product/Product'
-import styles from './ShopTheLatest.css'
 import powerBank1 from './images/powerBank1.png'
+import styles from './ShopTheLatest.css'
 
 const ShopTheLatest = () => {
   // Приклад як буде вигляждати масив товарів, який буде отримуватися з бази даних
@@ -61,7 +61,7 @@ const ShopTheLatest = () => {
 
       <div className={styles.products} >
         {products.map(product => (
-          <Product key={product.id} product={product} className={"shopTheLatest"}/>
+          <Product key={product.id} product={product} classNames={styles.shopTheLatest}/>
         ))}
       </div>
 

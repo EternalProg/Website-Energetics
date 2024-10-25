@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 import Product from '../Product/Product';
@@ -28,7 +29,7 @@ const ProductGrid = ({ products }) => {
     <div className={styles.productGrid}>
       <div className={styles.products}>
         {currentProducts.map((product) => (
-          <Product product={product} classNames={classNames} />
+          <Product key={product.id} product={product} classNames={classNames} />
         ))}
       </div>
 
@@ -48,6 +49,17 @@ const ProductGrid = ({ products }) => {
       </div>
     </div>
   );
+};
+
+ProductGrid.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      url: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default ProductGrid;
