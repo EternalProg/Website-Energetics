@@ -1,4 +1,2 @@
 cd frontend
 npm test
-
-echo "Running tests"

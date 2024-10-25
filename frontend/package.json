@@ -13,11 +13,6 @@
     "test:ct": "cypress run --component --browser chrome",
     "prepare": "cd .. && husky frontend/.husky"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test"
-    }
-  },
   "keywords": [
     "React",
     "eslint"
