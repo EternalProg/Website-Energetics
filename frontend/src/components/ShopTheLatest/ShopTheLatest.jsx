@@ -1,56 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import useAllProducts from '../../hooks/useAllProducts';
 import Product from '../Product/Product';
-import powerBank1 from './images/powerBank1.png';
 import styles from './ShopTheLatest.css';
 
 const ShopTheLatest = () => {
-  // Приклад як буде вигляждати масив товарів, який буде отримуватися з бази даних
-  const products = [
-    {
-      id: 1,
-      name: 'Product 1',
-      price: 100,
-      image: powerBank1,
-      url: '/product/1',
-    },
-    {
-      id: 2,
-      name: 'Product 2',
-      price: 200,
-      image: powerBank1,
-      url: '/product/1',
-    },
-    {
-      id: 3,
-      name: 'Product 3',
-      price: 300,
-      image: powerBank1,
-      url: '/product/1',
-    },
-    {
-      id: 4,
-      name: 'Product 4',
-      price: 200,
-      image: powerBank1,
-      url: '/product/1',
-    },
-    {
-      id: 5,
-      name: 'Product 5',
-      price: 300,
-      image: powerBank1,
-      url: '/product/1',
-    },
-    {
-      id: 6,
-      name: 'Product 5',
-      price: 300,
-      image: powerBank1,
-      url: '/product/1',
-    },
-  ];
+  const { products, isLoading, error } = useAllProducts();
+
+  {
+    /*
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:9000/api/products')
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error('Error fetching products:', error));
+  }, []);
+*/
+  }
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error fetching products: {error.message}</p>;
+  }
 
   return (
     <div>
@@ -58,20 +35,26 @@ const ShopTheLatest = () => {
         <li className={styles.shopTheLatest}>Shop The Latest</li>
         <li>
           <Link to={'/shop'} className={styles.viewAll}>
-            {' '}
-            View All{' '}
+            View All
           </Link>
         </li>
       </ul>
 
       <div className={styles.products}>
-        {products.map((product) => (
-          <a id={product.id} href={product.url} key={product.id}>
-            <Product key={product.id} product={product} classNames={styles.shopTheLatest} />{' '}
-          </a>
-        ))}
+        {products.slice(0, 6).map(
+          (
+            product, // Вибираємо перші 6 товарів
+          ) => (
+            <Link to={`/product/${product._id}`} key={product._id}>
+              <Product product={product} classNames={{}} />
+            </Link>
+          ),
+        )}
       </div>
     </div>
   );
 };
+
 export default ShopTheLatest;
+
+//import powerBank1 from './images/powerBank1.png';

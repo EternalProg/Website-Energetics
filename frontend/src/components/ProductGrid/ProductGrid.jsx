@@ -29,11 +29,10 @@ const ProductGrid = ({ products }) => {
     <div className={styles.productGrid}>
       <div className={styles.products}>
         {currentProducts.map((product) => (
-          <Product key={product.id} product={product} classNames={classNames} />
+          <Product key={product._id} product={product} classNames={classNames} />
         ))}
       </div>
 
-      {/* Пагінація */}
       <div className={styles.pagination}>
         <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
           Previous
@@ -54,10 +53,14 @@ const ProductGrid = ({ products }) => {
 ProductGrid.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
+      _id: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      url: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      productDetails: PropTypes.string.isRequired,
+      isMainProposition: PropTypes.bool,
     }),
   ).isRequired,
 };
