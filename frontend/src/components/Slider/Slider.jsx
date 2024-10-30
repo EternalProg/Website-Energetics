@@ -46,10 +46,14 @@ const Slider = ({ products }) => {
 Slider.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
+      category: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
+      productDetails: PropTypes.string.isRequired,
+      isMainProposition: PropTypes.bool,
     }),
   ).isRequired,
 };
