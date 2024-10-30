@@ -1,5 +1,5 @@
 {
-  "name": "project_c2",
+  "name": "website_energetics",
   "version": "1.0.0",
   "description": "My awesome project",
   "main": "index.js",
@@ -8,10 +8,10 @@
     "build": "webpack build -c config/webpack.production.config.js",
     "build:dev": "webpack build -c config/webpack.development.config.js",
     "start:dev": "webpack serve -c config/webpack.development.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "lint-staged",
     "test:open": "cypress open",
     "test:ct": "cypress run --component --browser chrome",
-    "prepare": "husky"
+    "prepare": "cd .. && husky frontend/.husky"
   },
   "keywords": [
     "React",
@@ -20,7 +20,6 @@
   "author": "dmitrii",
   "license": "ISC",
   "dependencies": {
-    "husky": "^9.1.6",
     "prop-types": "^15.8.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -42,13 +41,14 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-webpack": "^0.13.9",
     "eslint-plugin-cypress": "^3.5.0",
-    "eslint-plugin-import": "^2.30.0",
-    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unicorn": "^55.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.0",
+    "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "mini-css-extract-plugin": "^2.9.1",
     "prettier": "^3.3.3",

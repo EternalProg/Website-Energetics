@@ -1,4 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Dots from '../Dots/Dots';
 import Slide from '../Slide/Slide';
@@ -6,26 +7,26 @@ import styles from './Slider.css';
 
 const Slider = ({ products }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalRef = useRef(null);
+  const intervalReference = useRef(null);
 
   // Автоматична зміна слайдів кожні 10 секунд
   useEffect(() => {
     const startInterval = () => {
-      intervalRef.current = setInterval(() => {
+      intervalReference.current = setInterval(() => {
         setCurrentIndex((previousIndex) => (previousIndex + 1) % products.length);
       }, 10_000); // 10 секунд
     };
 
     startInterval();
 
-    return () => clearInterval(intervalRef.current); // Очищає інтервал при демонтажі компонента
+    return () => clearInterval(intervalReference.current); // Очищає інтервал при демонтажі компонента
   }, [products.length]);
 
   // Обробка кліку на крапочки
   const goToSlide = (index) => {
     setCurrentIndex(index);
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
+    clearInterval(intervalReference.current);
+    intervalReference.current = setInterval(() => {
       setCurrentIndex((previousIndex) => (previousIndex + 1) % products.length);
     }, 10_000); // 10 секунд
   };
@@ -38,9 +39,23 @@ const Slider = ({ products }) => {
       <Slide product={products[currentIndex]} />
 
       {/* Крапочки для перемикання слайдів */}
-
     </div>
   );
+};
+
+Slider.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      category: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      productDetails: PropTypes.string.isRequired,
+      isMainProposition: PropTypes.bool,
+    }),
+  ).isRequired,
 };
 
 export default Slider;

@@ -24,4 +24,9 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   padding-top: 52px;
   justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
 }

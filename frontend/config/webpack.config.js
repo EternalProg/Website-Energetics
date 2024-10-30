@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('node:path');
 
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
@@ -32,7 +32,9 @@ const basicConfig = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      '@components': path.resolve(__dirname, '../src/components'),
       '@hooks': path.resolve(__dirname, '../src/hooks'),
+      '@pages': path.resolve(__dirname, '../src/pages'),
     },
   },
   devServer: {

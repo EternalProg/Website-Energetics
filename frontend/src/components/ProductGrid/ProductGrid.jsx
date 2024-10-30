@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 import Product from '../Product/Product';
@@ -28,11 +29,10 @@ const ProductGrid = ({ products }) => {
     <div className={styles.productGrid}>
       <div className={styles.products}>
         {currentProducts.map((product) => (
-          <Product product={product} classNames={classNames} />
+          <Product key={product._id} product={product} classNames={classNames} />
         ))}
       </div>
 
-      {/* Пагінація */}
       <div className={styles.pagination}>
         <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
           Previous
@@ -48,6 +48,21 @@ const ProductGrid = ({ products }) => {
       </div>
     </div>
   );
+};
+
+ProductGrid.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      category: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      productDetails: PropTypes.string.isRequired,
+      isMainProposition: PropTypes.bool,
+    }),
+  ).isRequired,
 };
 
 export default ProductGrid;
