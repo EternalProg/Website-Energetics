@@ -1,11 +1,15 @@
 //import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Product from '../../components/Product/Product';
+import useProduct from '../../hooks/useProduct';
 //import { useParams } from 'react-router-dom';
 import styles from './ProductPage.css';
 
 const ProductPage = () => {
+  const { productData, isLoading, error } = useProduct();
+  const [activeTab, setActiveTab] = React.useState('details');
   const [quantity, setQuantity] = React.useState(1);
 
   const increaseQuantity = () => setQuantity(quantity + 1);
@@ -13,51 +17,17 @@ const ProductPage = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
 
-  const [activeTab, setActiveTab] = React.useState('details');
-  //const { id } = useParams();
-  // Тут ви можете отримати дані продукту за id, наприклад, з API або з масиву продуктів
-  //const product = products.find((product) => product.url === `/product/${id}`);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
-  /*if (!product) {
-    return <div>Product not found</div>;
-  }*/
-  const similarProducts = [
-    {
-      id: 1,
-      image: 'https://via.placeholder.com/100',
-      name: 'Product 1',
-      price: 99.99,
-      url: '/product/1',
-    },
-    {
-      id: 2,
-      image: 'https://via.placeholder.com/100',
-      name: 'Product 2',
-      price: 99.99,
-      url: '/product/2',
-    },
-    {
-      id: 3,
-      image: 'https://via.placeholder.com/100',
-      name: 'Product 3',
-      price: 99.99,
-      url: '/product/3',
-    },
-    {
-      id: 4,
-      image: 'https://via.placeholder.com/100',
-      name: 'Product 4',
-      price: 99.99,
-      url: '/product/4',
-    },
-    {
-      id: 5,
-      image: 'https://via.placeholder.com/100',
-      name: 'Product 5',
-      price: 99.99,
-      url: '/product/5',
-    },
-  ];
+  if (error) {
+    return <p>Error fetching product: {error.message}</p>;
+  }
+
+  if (!productData) return <div>Product was not found...</div>;
+
+  const { mainProduct, similarItems } = productData;
 
   const classNames = {
     product: styles.recommendationProduct,
@@ -67,17 +37,6 @@ const ProductPage = () => {
   };
 
   return (
-    /*<div className={styles.productPage}>
-    <div className={styles.product}>
-      <div>
-
-      </div>
-    </div>
-    //<h1> Name {/*{product.name}*/
-
-    //<img src={'https://via.placeholder.com/150' /*{product.image}*/} alt={'Name' /*product.name*/} />
-    //<p>Price: ${/*product.price*/}</p>
-    //</div>
     <div className={styles.productPage}>
       <div className={styles.product}>
         <div className={styles.imageGallery}>
@@ -88,18 +47,17 @@ const ProductPage = () => {
           <img src="https://via.placeholder.com/50" alt="thumbnail3" />
         </div>
 
-        <img src="https://via.placeholder.com/150" alt="Large product" className={styles.largeImage} />
+        <img src={mainProduct.image} alt="Large product" className={styles.largeImage} />
 
         <div className={styles.productDetails}>
-          {/* Велике зображення продукту */}
-
-          <h1>Name</h1>
-          <p className={styles.price}>$ 99.99</p>
+          <h1>{mainProduct.name}</h1>
+          <p className={styles.price}>$ {mainProduct.price}</p>
 
           <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit,
+            {mainProduct.description}
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit,
             sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat
-            sed eu felis.
+            sed eu felis. */}
           </p>
 
           <div className={styles.addButtons}>
@@ -141,7 +99,7 @@ const ProductPage = () => {
           {activeTab === 'details' && (
             <div className={styles.tabContent}>
               <h2>Product Details</h2>
-              <p>Опис продукту, його характеристики тощо.</p>
+              <p> {mainProduct.productDetails}</p>
             </div>
           )}
           {activeTab === 'reviews' && (
@@ -157,27 +115,19 @@ const ProductPage = () => {
       <div className={styles.similarItems}>
         <h2>Similar Items</h2>
         <div className={styles.recommendations}>
-          <Product product={similarProducts[0]} classNames={classNames} />
-          <Product product={similarProducts[1]} classNames={classNames} />
-          <Product product={similarProducts[2]} classNames={classNames} />
-          <Product product={similarProducts[3]} classNames={classNames} />
-          <Product product={similarProducts[4]} classNames={classNames} />
+          {similarItems.map(
+            (
+              product, // Вибираємо перші 6 товарів
+            ) => (
+              <Link to={`/product/${product._id}`} key={product._id}>
+                <Product product={product} classNames={classNames} />
+              </Link>
+            ),
+          )}
         </div>
       </div>
     </div>
   );
 };
-/*
-ProductPage.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-};*/
 
 export default ProductPage;
