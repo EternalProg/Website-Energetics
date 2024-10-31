@@ -8,35 +8,23 @@ import styles from './ShopPage.css';
 const ShopPage = () => {
   const { products, isLoading, error } = useAllProducts();
 
-  {
-    /*const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:9000/api/products')
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error('Error fetching products:', error));
-  }, []);
- console.log('Products1', products);
- */
-  }
-
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p data-testid="loading">Loading...</p>;
   }
 
   if (error) {
-    return <p>Error fetching products: {error.message}</p>;
+    return <p data-testid="error-message">Error fetching products: {error.message}</p>;
   }
 
   return (
-    <div className={styles.shopPage}>
+    <div className={styles.shopPage} data-testid="shop-page">
       <h1> Shop The Latest </h1>
       <div className={styles.grid}>
         <FilterPanel />
-        <ProductGrid products={products} />
+        <ProductGrid products={products} data-testid="product-grid" />
       </div>
     </div>
   );
 };
+
 export default ShopPage;

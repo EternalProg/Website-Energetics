@@ -50,10 +50,12 @@ const ProductPage = () => {
         <img src={mainProduct.image} alt="Large product" className={styles.largeImage} />
 
         <div className={styles.productDetails}>
-          <h1>{mainProduct.name}</h1>
-          <p className={styles.price}>$ {mainProduct.price}</p>
+          <h1 data-testid="product-name">{mainProduct.name}</h1>
+          <p data-testid="product-price" className={styles.price}>
+            $ {mainProduct.price}
+          </p>
 
-          <p className={styles.description}>
+          <p data-testid="product-description" className={styles.description}>
             {mainProduct.description}
             {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit,
             sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat
@@ -62,11 +64,13 @@ const ProductPage = () => {
 
           <div className={styles.addButtons}>
             <div className={styles.quantityButton}>
-              <button onClick={decreaseQuantity} className={styles.controlButton}>
+              <button data-testid="decrease-quantity" onClick={decreaseQuantity} className={styles.controlButton}>
                 -
               </button>
-              <span className={styles.quantity}>{quantity}</span>
-              <button onClick={increaseQuantity} className={styles.controlButton}>
+              <span data-testid="product-quantity" className={styles.quantity}>
+                {quantity}
+              </span>
+              <button data-testid="increase-quantity" onClick={increaseQuantity} className={styles.controlButton}>
                 +
               </button>
             </div>
@@ -112,7 +116,7 @@ const ProductPage = () => {
       </div>
 
       {/* Рекомендовані товари */}
-      <div className={styles.similarItems}>
+      <div data-testid="similar-items" className={styles.similarItems}>
         <h2>Similar Items</h2>
         <div className={styles.recommendations}>
           {similarItems.map(

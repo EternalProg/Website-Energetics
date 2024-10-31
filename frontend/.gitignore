@@ -1,6 +1,6 @@
 .idea
 TODO
-frontend/package-lock.json
+package-lock.json
 
 ### VisualStudioCode template
 .vscode/*
