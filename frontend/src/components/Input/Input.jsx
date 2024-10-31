@@ -6,8 +6,8 @@ import styles from './Input.css';
 const Input = ({ type, placeholder, value, onChange }) => {
   return (
     <div className={styles.formGroup}>
-      <input type={type} required="" value={value} onChange={onChange} />
-      <label> {placeholder} </label>
+      <input data-testid="input-element" type={type} required value={value} onChange={onChange} />
+      <label data-testid="input-label"> {placeholder} </label>
     </div>
   );
 };

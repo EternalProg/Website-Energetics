@@ -10,12 +10,10 @@ const ProductGrid = ({ products }) => {
 
   const totalPages = Math.ceil(products.length / productsPerPage);
 
-  // Розраховуємо, які продукти будуть показані на поточній сторінці
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  // Функція для зміни сторінки
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const classNames = {
@@ -26,23 +24,32 @@ const ProductGrid = ({ products }) => {
   };
 
   return (
-    <div className={styles.productGrid}>
-      <div className={styles.products}>
+    <div className={styles.productGrid} data-testid="product-grid">
+      <div className={styles.products} data-testid="products">
         {currentProducts.map((product) => (
           <Product key={product._id} product={product} classNames={classNames} />
         ))}
       </div>
 
-      <div className={styles.pagination}>
-        <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+      <div className={styles.pagination} data-testid="pagination">
+        <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} data-testid="prev-button">
           Previous
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
-          <button key={index} onClick={() => paginate(index + 1)} className={currentPage === index + 1 ? 'active' : ''}>
+          <button
+            key={index}
+            onClick={() => paginate(index + 1)}
+            className={currentPage === index + 1 ? 'active' : ''}
+            data-testid={`page-button-${index + 1}`}
+          >
             {index + 1}
           </button>
         ))}
-        <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === totalPages}>
+        <button
+          onClick={() => paginate(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          data-testid="next-button"
+        >
           Next
         </button>
       </div>
