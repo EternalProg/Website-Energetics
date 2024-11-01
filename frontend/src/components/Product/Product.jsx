@@ -6,7 +6,7 @@ import styles from './Product.css';
 
 const Product = ({ product, classNames }) => {
   return (
-    <div className={`${styles.product} ${classNames.product}`}>
+    <div data-testid="product" className={`${styles.product} ${classNames.product}`}>
       <Link to={`/product/${product._id}`} key={product._id}>
         <img src={product.image} className={`${styles.productImage} ${classNames.productImage}`} alt="product" />
       </Link>

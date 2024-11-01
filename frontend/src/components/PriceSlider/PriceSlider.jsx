@@ -7,21 +7,20 @@ const PriceSlider = () => {
   const [maxPrice, setMaxPrice] = useState(10_000);
 
   const handleMinPriceChange = (event) => {
-    const value = Math.min(Number(event.target.value), maxPrice - 500); // Мінімум не може бути більшим за макс - 100
+    const value = Math.min(Number(event.target.value), maxPrice - 500);
     setMinPrice(value);
   };
 
   const handleMaxPriceChange = (event) => {
-    const value = Math.max(Number(event.target.value), minPrice + 500); // Максимум не може бути меншим за мін + 100
+    const value = Math.max(Number(event.target.value), minPrice + 500);
     setMaxPrice(value);
   };
 
-
   return (
-    <div className={styles.filterPrice}>
+    <div className={styles.filterPrice} data-testid="price-slider">
       <div className={styles.rangeValues}>
-        <span>Min: ${minPrice}</span>
-        <span>Max: ${maxPrice}</span>
+        <span data-testid="min-price">Min: ${minPrice}</span>
+        <span data-testid="max-price">Max: ${maxPrice}</span>
       </div>
       <div className={styles.sliderContainer}>
         {/* Подвійний слайдер */}
@@ -32,6 +31,7 @@ const PriceSlider = () => {
           max="10000"
           value={minPrice}
           onChange={handleMinPriceChange}
+          data-testid="min-price-slider"
         />
         <input
           className={`${styles.rangeBar} ${styles.rangeMax}`}
@@ -40,14 +40,15 @@ const PriceSlider = () => {
           max="10000"
           value={maxPrice}
           onChange={handleMaxPriceChange}
+          data-testid="max-price-slider"
         />
-        {/* Стилізована лінія прогресу */}
         <div
           className={styles.progress}
           style={{
             left: `${(minPrice / 10_000) * 100}%`,
             right: `${100 - (maxPrice / 10_000) * 100}%`,
           }}
+          data-testid="progress-bar"
         ></div>
       </div>
     </div>
