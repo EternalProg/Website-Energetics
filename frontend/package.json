@@ -9,8 +9,9 @@
     "build:dev": "webpack build -c config/webpack.development.config.js",
     "start:dev": "webpack serve -c config/webpack.development.config.js",
     "test": "lint-staged",
-    "test:open": "cypress open",
+    "cy:open": "cypress open",
     "test:ct": "cypress run --component --browser chrome",
+    "test:e2e": "cypress run --browser chrome",
     "prepare": "cd .. && husky frontend/.husky"
   },
   "keywords": [
@@ -31,6 +32,7 @@
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
     "@cypress/code-coverage": "^3.13.2",
+    "@cypress/webpack-preprocessor": "^6.0.2",
     "@istanbuljs/nyc-config-babel": "^3.0.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "babel-loader": "^9.2.1",

@@ -8,19 +8,6 @@ import styles from './ShopTheLatest.css';
 const ShopTheLatest = () => {
   const { products, isLoading, error } = useAllProducts();
 
-  {
-    /*
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:9000/api/products')
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error('Error fetching products:', error));
-  }, []);
-*/
-  }
-
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -30,31 +17,27 @@ const ShopTheLatest = () => {
   }
 
   return (
-    <div>
+    <div data-testid="shop-the-latest">
       <ul>
-        <li className={styles.shopTheLatest}>Shop The Latest</li>
+        <li className={styles.shopTheLatest} data-testid="shop-the-latest-title">
+          Shop The Latest
+        </li>
         <li>
-          <Link to={'/shop'} className={styles.viewAll}>
+          <Link to={'/shop'} className={styles.viewAll} data-testid="view-all-link">
             View All
           </Link>
         </li>
       </ul>
 
-      <div className={styles.products}>
-        {products.slice(0, 6).map(
-          (
-            product, // Вибираємо перші 6 товарів
-          ) => (
-            <Link to={`/product/${product._id}`} key={product._id}>
-              <Product product={product} classNames={{}} />
-            </Link>
-          ),
-        )}
+      <div className={styles.products} data-testid="products">
+        {products.slice(0, 6).map((product) => (
+          <Link to={`/product/${product._id}`} key={product._id} data-testid={`product-link-${product._id}`}>
+            <Product product={product} classNames={{}} />
+          </Link>
+        ))}
       </div>
     </div>
   );
 };
 
 export default ShopTheLatest;
-
-//import powerBank1 from './images/powerBank1.png';

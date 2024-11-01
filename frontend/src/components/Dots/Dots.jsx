@@ -1,11 +1,13 @@
-import PropTypes from "prop-types"; // Важливо, що стилі імпортовані
+import PropTypes from 'prop-types'; // Важливо, що стилі імпортовані
 import React from 'react';
 
 import styles from './Dots.css';
 
 const Dots = ({ currentIndex, total, goToSlide }) => {
   return (
-    <div className={styles.dotsContainer}> {/* Використання styles для доступу до класу */}
+    <div className={styles.dotsContainer} data-testid="dotsContainer">
+      {' '}
+      {/* Використання styles для доступу до класу */}
       {Array.from({ length: total }).map((_, index) => (
         <span
           key={index}

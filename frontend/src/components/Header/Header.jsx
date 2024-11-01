@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <>
       <div className={styles.header}>
-        <a href="/" className={styles.energetics}>
+        <a href="/" className={styles.energetics} data-testid="logo">
           Energetics
         </a>
         <ul className={styles.inlineList}>
@@ -52,18 +52,18 @@ const Header = () => {
             </Link>
           </li>
           <li>|</li>
-          <li>
+          <li data-testid="shopCart">
             <Cart />
           </li>
           <li>
             <Find />
           </li>
-          <li id={styles.authorizationIcon}>
+          <li id={styles.authorizationIcon} data-testid="authorizationIcon">
             <Authorization />
           </li>
         </ul>
       </div>
-      <hr className={styles.headerHorizontalLine}/>
+      <hr className={styles.headerHorizontalLine} />
     </>
   );
 };

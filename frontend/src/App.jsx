@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import AppRoutes from '../routes';
-// import resizeHook from '@hooks/resize';
 import styles from './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
