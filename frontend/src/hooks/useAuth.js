@@ -33,7 +33,7 @@ const useAuth = () => {
       return;
     }
 
-    const url = isSignIn ? 'http://localhost:9000/api/login' : 'http://localhost:9000/api/register';
+    const url = isSignIn ? `${process.env.API_BASE_URL}/api/login` : `${process.env.API_BASE_URL}/api/register`;
 
     const payload = {
       email,
