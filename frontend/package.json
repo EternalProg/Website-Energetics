@@ -4,7 +4,7 @@
   "description": "My awesome project",
   "main": "index.js",
   "scripts": {
-    "start": "echo \"Please provide entry file\" && exit 1",
+    "start": "npx serve -s dist",
     "build": "webpack build -c config/webpack.production.config.js",
     "build:dev": "webpack build -c config/webpack.development.config.js",
     "start:dev": "webpack serve -c config/webpack.development.config.js",
