@@ -23,7 +23,11 @@ const Slide = ({ product }) => {
           </button>
         </Link>
       </div>
-      <img src={product.image} alt={product.name} data-testid="product-image" />
+      <img
+        src={`${process.env.REACT_APP_API_BASE_URL}${product.image}`}
+        alt={product.name}
+        data-testid="product-image"
+      />
     </div>
   );
 };

@@ -8,7 +8,11 @@ const Product = ({ product, classNames }) => {
   return (
     <div data-testid="product" className={`${styles.product} ${classNames.product}`}>
       <Link to={`/product/${product._id}`} key={product._id}>
-        <img src={product.image} className={`${styles.productImage} ${classNames.productImage}`} alt="product" />
+        <img
+          src={`${process.env.REACT_APP_API_BASE_URL}${product.image}`}
+          className={`${styles.productImage} ${classNames.productImage}`}
+          alt="product"
+        />
       </Link>
       <span className={`${styles.productName} ${classNames.productName}`}>{product.name}</span>
       <span className={`${styles.productPrice} ${classNames.productPrice}`}>${product.price}</span>

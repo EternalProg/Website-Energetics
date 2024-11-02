@@ -47,7 +47,11 @@ const ProductPage = () => {
           <img src="https://via.placeholder.com/50" alt="thumbnail3" />
         </div>
 
-        <img src={mainProduct.image} alt="Large product" className={styles.largeImage} />
+        <img
+          src={`${process.env.REACT_APP_API_BASE_URL}${mainProduct.image}`}
+          alt="Large product"
+          className={styles.largeImage}
+        />
 
         <div className={styles.productDetails}>
           <h1 data-testid="product-name">{mainProduct.name}</h1>
