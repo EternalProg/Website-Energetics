@@ -1,11 +1,10 @@
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const Dotenv = require('dotenv-webpack');
 const basicConfig = require('./webpack.config');
 
 const config = {
   mode: 'production',
-  plugins: [new MiniCssExtractPlugin(), new Dotenv()],
+  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
@@ -37,13 +36,6 @@ const config = {
         ],
       },
     ],
-  },
-  resolve: {
-    fallback: {
-      path: false,
-      os: false,
-      crypto: false,
-    },
   },
 };
 

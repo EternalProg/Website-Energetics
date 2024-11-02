@@ -12,7 +12,7 @@ const basicConfig = {
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, '../templates/index.html'),
     }),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
   ],
   module: {
     rules: [
