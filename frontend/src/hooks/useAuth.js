@@ -33,7 +33,9 @@ const useAuth = () => {
       return;
     }
 
-    const url = isSignIn ? `${process.env.API_BASE_URL}/api/login` : `${process.env.API_BASE_URL}/api/register`;
+    const url = isSignIn
+      ? `${process.env.REACT_APP_API_BASE_URL}/api/login`
+      : `${process.env.REACT_APP_API_BASE_URL}/api/register`;
 
     const payload = {
       email,

@@ -9,7 +9,7 @@ const useProduct = () => {
 
   useEffect(() => {
     if (productId) {
-      fetch(`${process.env.API_BASE_URL}/api/productPage/${productId}`)
+      fetch(`${process.env.REACT_APP_API_BASE_URL}/api/productPage/${productId}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
